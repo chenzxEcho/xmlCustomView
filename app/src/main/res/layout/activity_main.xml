@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chenzexuan.xmlcustomviewdemo.MainActivity">
+
+
+    <com.chenzexuan.xmlcustomviewlib.XmlCustomTextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:enabled="true"
+        android:gravity="center"
+        android:text="HELLO WORLD"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:xmlCustomView_background_color="#0070FF"
+        app:xmlCustomView_background_disable_alpha="51"
+        app:xmlCustomView_radius="14dp"
+        app:xmlCustomView_text_color="#FFFFFF"
+        app:xmlCustomView_text_pressed_color="#4cffffff"
+        />
+
+</android.support.constraint.ConstraintLayout>
