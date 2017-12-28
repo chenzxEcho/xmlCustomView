@@ -1,6 +1,7 @@
 # introduce in XmlCustomViewHelper
 
 
+引入xmlcustomviewlib即可
 
 
  * 使用方法：
