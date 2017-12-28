@@ -7,6 +7,7 @@
  * 方法1、在xml文件中通过 app:xmlCustomView_... 的方式设置各种样式
 
 例：
+```
 <com.chenzexuan.xmlcustomviewlib.XmlCustomTextView
       android:id="@+id/text"
       android:layout_width="match_parent"
@@ -19,17 +20,18 @@
       app:xmlCustomView_radius="14dp"
       app:xmlCustomView_text_color="#FFFFFF"
       app:xmlCustomView_text_pressed_color="#4cffffff"
-      />
-
+      />
+```
  * 方法2、使用XmlCustomView的updateXmlCustomViewParams(XmlCustomViewParams viewParams)方法在java代码中组装viewParams后更新
 
 例：
+```
   XmlCustomViewParams params = new XmlCustomViewParams();
   params.setRawTextColor(getResources().getColor(android.R.color.black));
   params.setSelectedTextColor(getResources().getColor(android.R.color.holo_red_dark));
   XmlCustomTextView textView = new XmlCustomTextView(context, params);
-  textView.updateXmlCustomViewParams(params);
-
+  textView.updateXmlCustomViewParams(params);
+```
 
  * 可设置控件背景色（正常状态、按下状态、disable状态、聚焦状态） 只可设置纯色
  * <p>
