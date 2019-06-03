@@ -9,31 +9,33 @@ import android.widget.EditText;
 /**
  * Created by chenzexuan on 2017/1/12.
  *
- * introduce in XmlCustomViewHelper
+ * introduce in FlatXmlViewHelper
  */
 
 public class XmlCustomEditText extends EditText {
 
-    private final XmlCustomViewParams mXmlCustomViewParams;
+    private final FlatXml mXmlCustomViewParams;
 
     public XmlCustomEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mXmlCustomViewParams = XmlCustomViewHelper.buildXmlCustomViewParams(context, attrs);
-        Drawable background = XmlCustomViewHelper.buildBackgroundDrawable(mXmlCustomViewParams);
+        mXmlCustomViewParams = FlatXmlViewHelper.buildXmlParams(context, attrs);
+        Drawable background = FlatXmlViewHelper.buildBackgroundDrawable(mXmlCustomViewParams);
         if (background != null) {
             setBackgroundDrawable(background);
         }
-        ColorStateList colorStateList = XmlCustomViewHelper.buildColorStateList(this, mXmlCustomViewParams);
+        ColorStateList colorStateList = FlatXmlViewHelper
+            .buildColorStateList(this, mXmlCustomViewParams);
         if (colorStateList != null) {
             setTextColor(colorStateList);
         }
     }
 
     public void setDefaultTextColor(int color) {
-        setTextColor(XmlCustomViewHelper.buildColorStateList(this, color));
+        setTextColor(FlatXmlViewHelper.buildColorStateList(this, color));
     }
 
     public void setTextColor(int defaultColor, int pressedColor, int disableColor, int focusedColor, int selectedColor) {
-        setTextColor(XmlCustomViewHelper.buildColorStateList(pressedColor, disableColor, focusedColor, selectedColor, defaultColor));
+        setTextColor(FlatXmlViewHelper
+            .buildColorStateList(pressedColor, disableColor, focusedColor, selectedColor, defaultColor));
     }
 }

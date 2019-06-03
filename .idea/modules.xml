@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/XmlCustomViewDemo.iml" filepath="$PROJECT_DIR$/XmlCustomViewDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmlCustomView.iml" filepath="$PROJECT_DIR$/xmlCustomView.iml" />
       <module fileurl="file://$PROJECT_DIR$/xmlcustomviewlib/xmlcustomviewlib.iml" filepath="$PROJECT_DIR$/xmlcustomviewlib/xmlcustomviewlib.iml" />
     </modules>
   </component>

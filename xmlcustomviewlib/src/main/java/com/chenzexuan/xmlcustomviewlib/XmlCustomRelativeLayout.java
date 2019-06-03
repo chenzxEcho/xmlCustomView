@@ -13,13 +13,13 @@ import android.widget.RelativeLayout;
 
 public class XmlCustomRelativeLayout extends RelativeLayout {
 
-    private XmlCustomViewParams mXmlCustomViewParams;
-    private XmlCustomViewHelper.OnDisableStateClickListener mOnDisableStateClickListener;
+    private FlatXml mXmlCustomViewParams;
+    private FlatXmlViewHelper.OnDisableStateClickListener mOnDisableStateClickListener;
 
     public XmlCustomRelativeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mXmlCustomViewParams = XmlCustomViewHelper.buildXmlCustomViewParams(context, attrs);
-        Drawable background = XmlCustomViewHelper.buildBackgroundDrawable(mXmlCustomViewParams);
+        mXmlCustomViewParams = FlatXmlViewHelper.buildXmlParams(context, attrs);
+        Drawable background = FlatXmlViewHelper.buildBackgroundDrawable(mXmlCustomViewParams);
         if (background != null) {
             APICompatibleUtil.setBackgroundDrawable(this, background);
         }
@@ -27,18 +27,18 @@ public class XmlCustomRelativeLayout extends RelativeLayout {
 
     public void setDefaultBackgroundColor(int color) {
         mXmlCustomViewParams.setRawBackgroundColor(color);
-        setBackgroundDrawable(XmlCustomViewHelper.buildBackgroundDrawable(mXmlCustomViewParams));
+        setBackgroundDrawable(FlatXmlViewHelper.buildBackgroundDrawable(mXmlCustomViewParams));
     }
 
-    public void updateXmlCustomViewParams(XmlCustomViewParams viewParams) {
+    public void updateXmlCustomViewParams(FlatXml viewParams) {
         if (viewParams == null) {
             return;
         }
         mXmlCustomViewParams = viewParams;
-        setBackgroundDrawable(XmlCustomViewHelper.buildBackgroundDrawable(mXmlCustomViewParams));
+        setBackgroundDrawable(FlatXmlViewHelper.buildBackgroundDrawable(mXmlCustomViewParams));
     }
 
-    public XmlCustomViewParams getXmlCustomViewParams() {
+    public FlatXml getXmlCustomViewParams() {
         return mXmlCustomViewParams;
     }
 
@@ -50,7 +50,7 @@ public class XmlCustomRelativeLayout extends RelativeLayout {
         return super.onTouchEvent(event);
     }
 
-    public void setOnDisableStateClickListener(XmlCustomViewHelper.OnDisableStateClickListener listener) {
+    public void setOnDisableStateClickListener(FlatXmlViewHelper.OnDisableStateClickListener listener) {
         mOnDisableStateClickListener = listener;
     }
 }

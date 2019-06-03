@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
  * Created by chenzexuan on 2017/1/13.
  */
 
-public class XmlCustomViewParams {
+public class FlatXml {
 
     public final static int DEFAULT_COLOR = 0;
 
@@ -65,6 +65,8 @@ public class XmlCustomViewParams {
     private int focusedTextColor;
 
     private int selectedTextColor;
+
+    private Gradient gradient;
 
     public int getRawBackgroundColor() {
         return rawBackgroundColor;
@@ -148,6 +150,17 @@ public class XmlCustomViewParams {
 
     public float[] getCorners() {
         return corners;
+    }
+
+    public float[] getInnerCorners() {
+        if (strokeWidth == 0) {
+            return corners;
+        }
+        float[] innerCorner = new float[8];
+        for (int i = 0;i < innerCorner.length;i++) {
+            innerCorner[i] = corners[i] - strokeWidth;
+        }
+        return innerCorner;
     }
 
     public void setCorners(float[] corners) {
@@ -264,5 +277,16 @@ public class XmlCustomViewParams {
 
     public void setSelectedTextColor(int selectedTextColor) {
         this.selectedTextColor = selectedTextColor;
+    }
+
+    public Gradient getGradient() {
+        if (gradient == null) {
+            gradient = new Gradient();
+        }
+        return gradient;
+    }
+
+    public void setGradient(Gradient gradient) {
+        this.gradient = gradient;
     }
 }

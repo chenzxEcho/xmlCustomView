@@ -11,22 +11,23 @@ import android.widget.TextView;
 /**
  * Created by chenzexuan on 2017/1/12.
  *
- * introduce in XmlCustomViewHelper
+ * introduce in FlatXmlViewHelper
  */
 
-public class XmlCustomTextView extends TextView implements XmlCustomView {
+public class XmlCustomTextView extends TextView implements FlatXmlView {
 
-    private XmlCustomViewParams mXmlCustomViewParams;
-    private XmlCustomViewHelper.OnDisableStateClickListener mOnDisableStateClickListener;
+    private FlatXml mXmlParams;
+    private FlatXmlViewHelper.OnDisableStateClickListener mOnDisableStateClickListener;
 
-    public XmlCustomTextView(Context context, XmlCustomViewParams viewParams) {
+    public XmlCustomTextView(Context context, FlatXml viewParams) {
         super(context);
-        mXmlCustomViewParams = viewParams;
-        Drawable background = XmlCustomViewHelper.buildBackgroundDrawable(mXmlCustomViewParams);
+        mXmlParams = viewParams;
+        Drawable background = FlatXmlViewHelper.buildBackgroundDrawable(mXmlParams);
         if (background != null) {
             APICompatibleUtil.setBackgroundDrawable(this, background);
         }
-        ColorStateList colorStateList = XmlCustomViewHelper.buildColorStateList(this, mXmlCustomViewParams);
+        ColorStateList colorStateList = FlatXmlViewHelper
+            .buildColorStateList(this, mXmlParams);
         if (colorStateList != null) {
             setTextColor(colorStateList);
         }
@@ -34,46 +35,49 @@ public class XmlCustomTextView extends TextView implements XmlCustomView {
 
     public XmlCustomTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mXmlCustomViewParams = XmlCustomViewHelper.buildXmlCustomViewParams(context, attrs);
-        Drawable background = XmlCustomViewHelper.buildBackgroundDrawable(mXmlCustomViewParams);
+        mXmlParams = FlatXmlViewHelper.buildXmlParams(context, attrs);
+        Drawable background = FlatXmlViewHelper.buildBackgroundDrawable(mXmlParams);
         if (background != null) {
             APICompatibleUtil.setBackgroundDrawable(this, background);
         }
-        ColorStateList colorStateList = XmlCustomViewHelper.buildColorStateList(this, mXmlCustomViewParams);
+        ColorStateList colorStateList = FlatXmlViewHelper
+            .buildColorStateList(this, mXmlParams);
         if (colorStateList != null) {
             setTextColor(colorStateList);
         }
     }
     public void setDefaultTextColor(int color) {
-        setTextColor(XmlCustomViewHelper.buildColorStateList(this, color));
+        setTextColor(FlatXmlViewHelper.buildColorStateList(this, color));
     }
 
     public void setDefaultBackgroundColor(int color) {
-        mXmlCustomViewParams.setRawBackgroundColor(color);
-        setBackgroundDrawable(XmlCustomViewHelper.buildBackgroundDrawable(mXmlCustomViewParams));
+        mXmlParams.setRawBackgroundColor(color);
+        setBackgroundDrawable(FlatXmlViewHelper.buildBackgroundDrawable(mXmlParams));
     }
 
-    public void updateXmlCustomViewParams(XmlCustomViewParams viewParams) {
+    public void updateXmlParams(FlatXml viewParams) {
         if (viewParams == null) {
             return;
         }
-        mXmlCustomViewParams = viewParams;
-        Drawable background = XmlCustomViewHelper.buildBackgroundDrawable(mXmlCustomViewParams);
+        mXmlParams = viewParams;
+        Drawable background = FlatXmlViewHelper.buildBackgroundDrawable(mXmlParams);
         if (background != null) {
             APICompatibleUtil.setBackgroundDrawable(this, background);
         }
-        ColorStateList colorStateList = XmlCustomViewHelper.buildColorStateList(this, mXmlCustomViewParams);
+        ColorStateList colorStateList = FlatXmlViewHelper
+            .buildColorStateList(this, mXmlParams);
         if (colorStateList != null) {
             setTextColor(colorStateList);
         }
     }
 
-    public XmlCustomViewParams getXmlCustomViewParams() {
-        return mXmlCustomViewParams;
+    public FlatXml getXmlParams() {
+        return mXmlParams;
     }
 
     public void setTextColor(int defaultColor, int pressedColor, int disableColor, int focusedColor, int selectedColor) {
-        setTextColor(XmlCustomViewHelper.buildColorStateList(pressedColor, disableColor, focusedColor, selectedColor, defaultColor));
+        setTextColor(FlatXmlViewHelper
+            .buildColorStateList(pressedColor, disableColor, focusedColor, selectedColor, defaultColor));
     }
 
     @Override
@@ -85,7 +89,7 @@ public class XmlCustomTextView extends TextView implements XmlCustomView {
     }
 
     @Override
-    public void setOnDisableStateClickListener(XmlCustomViewHelper.OnDisableStateClickListener listener) {
+    public void setOnDisableStateClickListener(FlatXmlViewHelper.OnDisableStateClickListener listener) {
         mOnDisableStateClickListener = listener;
     }
 }

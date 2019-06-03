@@ -23,11 +23,17 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:xmlCustomView_background_color="#0070FF"
-        app:xmlCustomView_background_disable_alpha="51"
-        app:xmlCustomView_radius="14dp"
-        app:xmlCustomView_text_color="#FFFFFF"
-        app:xmlCustomView_text_pressed_color="#4cffffff"
+        app:fx_background_color="#0070FF"
+        app:fx_background_disable_alpha="51"
+        app:fx_radius="14dp"
+        app:fx_text_color="#FFFFFF"
+        app:fx_stroke_width="2dp"
+        app:fx_stroke_color="#000000"
+        app:fx_text_pressed_color="#4cffffff"
+        app:fx_gradient_raw_start_color="#ff0000"
+        app:fx_gradient_raw_end_color="#00ff00"
+        app:fx_gradient_orientation="left_to_right"
+        app:fx_use_gradient="true"
         />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,61 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="XmlCustomView">
+    <declare-styleable name="flatXml">
         <!--背景纯色-->
-        <attr name="xmlCustomView_background_color" format="color|reference"/>
+        <attr name="fx_background_color" format="color|reference"/>
         <!--背景资源-->
-        <attr name="xmlCustomView_background_resource" format="reference"/>
+        <attr name="fx_background_resource" format="reference"/>
         <!--全状态alpha  0 ~ 255-->
-        <attr name="xmlCustomView_alpha" format="integer|reference"/>
+        <attr name="fx_alpha" format="integer|reference"/>
         <!--全部圆角 推荐-->
-        <attr name="xmlCustomView_radius" format="dimension|reference"/>
+        <attr name="fx_radius" format="dimension|reference"/>
         <!--左上角圆角-->
-        <attr name="xmlCustomView_radius_left_top" format="dimension|reference"/>
+        <attr name="fx_radius_left_top" format="dimension|reference"/>
         <!--左下角圆角-->
-        <attr name="xmlCustomView_radius_left_bottom" format="dimension|reference"/>
+        <attr name="fx_radius_left_bottom" format="dimension|reference"/>
         <!--右上角圆角-->
-        <attr name="xmlCustomView_radius_right_top" format="dimension|reference"/>
+        <attr name="fx_radius_right_top" format="dimension|reference"/>
         <!--右下角圆角-->
-        <attr name="xmlCustomView_radius_right_bottom" format="dimension|reference"/>
+        <attr name="fx_radius_right_bottom" format="dimension|reference"/>
         <!--描边颜色-->
-        <attr name="xmlCustomView_stroke_color" format="color|reference"/>
+        <attr name="fx_stroke_color" format="color|reference"/>
         <!--描边宽度-->
-        <attr name="xmlCustomView_stroke_width" format="dimension|reference"/>
+        <attr name="fx_stroke_width" format="dimension|reference"/>
         <!--press状态背景资源-->
-        <attr name="xmlCustomView_background_pressed_resource" format="reference"/>
+        <attr name="fx_background_pressed_resource" format="reference"/>
         <!--聚焦状态背景资源-->
-        <attr name="xmlCustomView_background_focused_resource" format="reference"/>
+        <attr name="fx_background_focused_resource" format="reference"/>
         <!--disable状态背景资源-->
-        <attr name="xmlCustomView_background_disable_resource" format="reference"/>
+        <attr name="fx_background_disable_resource" format="reference"/>
         <!--选中状态背景资源-->
-        <attr name="xmlCustomView_background_selected_resource" format="reference"/>
+        <attr name="fx_background_selected_resource" format="reference"/>
         <!--press状态背景颜色-->
-        <attr name="xmlCustomView_background_pressed_color" format="color"/>
+        <attr name="fx_background_pressed_color" format="color"/>
         <!--聚焦状态背景颜色-->
-        <attr name="xmlCustomView_background_focused_color" format="color"/>
+        <attr name="fx_background_focused_color" format="color"/>
         <!--disable状态背景颜色-->
-        <attr name="xmlCustomView_background_disable_color" format="color"/>
+        <attr name="fx_background_disable_color" format="color"/>
         <!--选中状态背景颜色-->
-        <attr name="xmlCustomView_background_selected_color" format="color"/>
+        <attr name="fx_background_selected_color" format="color"/>
         <!--背景alpha-->
-        <attr name="xmlCustomView_background_alpha" format="integer|reference"/>
+        <attr name="fx_background_alpha" format="integer|reference"/>
         <!--press状态alpha 0 ~ 255-->
-        <attr name="xmlCustomView_background_pressed_alpha" format="integer|reference"/>
+        <attr name="fx_background_pressed_alpha" format="integer|reference"/>
         <!--聚焦状态alpha 0 ~ 255-->
-        <attr name="xmlCustomView_background_focused_alpha" format="integer|reference"/>
+        <attr name="fx_background_focused_alpha" format="integer|reference"/>
         <!--disable状态alpha 0 ~ 255-->
-        <attr name="xmlCustomView_background_disable_alpha" format="integer|reference"/>
+        <attr name="fx_background_disable_alpha" format="integer|reference"/>
         <!--选中状态alpha 0 ~ 255-->
-        <attr name="xmlCustomView_background_selected_alpha" format="integer|reference"/>
+        <attr name="fx_background_selected_alpha" format="integer|reference"/>
         <!--文字色-->
-        <attr name="xmlCustomView_text_color" format="color"/>
+        <attr name="fx_text_color" format="color"/>
         <!--press状态文字色-->
-        <attr name="xmlCustomView_text_pressed_color" format="color"/>
+        <attr name="fx_text_pressed_color" format="color"/>
         <!--聚焦状态文字色-->
-        <attr name="xmlCustomView_text_focused_color" format="color"/>
+        <attr name="fx_text_focused_color" format="color"/>
         <!--disable状态文字色-->
-        <attr name="xmlCustomView_text_disable_color" format="color"/>
+        <attr name="fx_text_disable_color" format="color"/>
         <!--选中状态文字色-->
-        <attr name="xmlCustomView_text_selected_color" format="color"/>
+        <attr name="fx_text_selected_color" format="color"/>
+
+        <attr name="fx_use_gradient" format="boolean"/>
+        <attr name="fx_gradient_raw_start_color" format="color"/>
+        <attr name="fx_gradient_raw_center_color" format="color"/>
+        <attr name="fx_gradient_raw_end_color" format="color"/>
+
+        <attr name="fx_gradient_pressed_start_color" format="color"/>
+        <attr name="fx_gradient_pressed_center_color" format="color"/>
+        <attr name="fx_gradient_pressed_end_color" format="color"/>
+
+        <attr name="fx_gradient_focused_start_color" format="color"/>
+        <attr name="fx_gradient_focused_center_color" format="color"/>
+        <attr name="fx_gradient_focused_end_color" format="color"/>
+
+        <attr name="fx_gradient_disable_start_color" format="color"/>
+        <attr name="fx_gradient_disable_center_color" format="color"/>
+        <attr name="fx_gradient_disable_end_color" format="color"/>
+
+        <attr name="fx_gradient_selected_start_color" format="color"/>
+        <attr name="fx_gradient_selected_center_color" format="color"/>
+        <attr name="fx_gradient_selected_end_color" format="color"/>
+
+        <attr name="fx_gradient_orientation" format="enum">
+            <enum name="top_to_bottom" value="1" />
+            <enum name="left_to_right" value="2" />
+            <enum name="bottom_to_top" value="3" />
+            <enum name="right_to_left" value="4" />
+        </attr>
+
+        <attr name="fx_gradient_type" format="enum">
+            <enum name="linear" value="1" />
+            <enum name="radial" value="2" />
+            <enum name="sweep" value="3" />
+        </attr>
+
+        <attr name="fx_gradient_angle" format="integer"/>
     </declare-styleable>
 </resources>

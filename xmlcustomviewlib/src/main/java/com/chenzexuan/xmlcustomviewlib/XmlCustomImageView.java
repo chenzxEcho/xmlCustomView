@@ -8,17 +8,17 @@ import android.widget.ImageView;
 /**
  * Created by chenzexuan on 2017/1/12.
  *
- * introduce in XmlCustomViewHelper
+ * introduce in FlatXmlViewHelper
  */
 
 public class XmlCustomImageView extends ImageView {
 
-    private final XmlCustomViewParams mXmlCustomViewParams;
+    private final FlatXml mXmlCustomViewParams;
 
     public XmlCustomImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mXmlCustomViewParams = XmlCustomViewHelper.buildXmlCustomViewParams(context, attrs);
-        Drawable background = XmlCustomViewHelper.buildBackgroundDrawable(mXmlCustomViewParams);
+        mXmlCustomViewParams = FlatXmlViewHelper.buildXmlParams(context, attrs);
+        Drawable background = FlatXmlViewHelper.buildBackgroundDrawable(mXmlCustomViewParams);
         if (background != null) {
             APICompatibleUtil.setBackgroundDrawable(this, background);
         }
